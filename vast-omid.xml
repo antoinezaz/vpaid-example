@@ -1,0 +1,51 @@
+<VAST version="3.0">
+  <Ad>
+    <InLine>
+      <AdSystem/>
+      <AdTitle>
+        <![CDATA[ Ogury Vast Green Video ]]>
+      </AdTitle>
+      <Description>
+        <![CDATA[ Ogury Vast Green Video for testing purposes ]]>
+      </Description>
+      <Impression>
+        <![CDATA[ https://localhost/impression_htv ]]>
+      </Impression>
+
+      <AdVerifications>
+        <Verification vendor="ogury.com">
+          <JavaScriptResource apiFramework="OMID" browserOptional="true">
+            <![CDATA[ https://omid.presage.io/omid.js ]]>
+          </JavaScriptResource>
+          <VerificationParameters>
+            <![CDATA[ {"vendorKey": "test_key", "verification_partner": "ogury"} ]]>
+          </VerificationParameters>
+        </Verification>
+      </AdVerifications>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <Duration>00:00:10</Duration>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[ https://localhost/start_htv ]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[ https://localhost/firstQuartile_htv ]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[ https://localhost/midpoint_htv ]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[ https://localhost/thirdQuartile_htv ]]></Tracking>
+              <Tracking event="complete"><![CDATA[ https://localhost/complete_htv ]]></Tracking>
+            </TrackingEvents>
+            <VideoClicks>
+              <ClickThrough>
+                <![CDATA[ https://localhost/clickthrough_htv ]]>
+              </ClickThrough>
+            </VideoClicks>
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360">
+                <![CDATA[ https://medias.devc.cloud.ogury.io/medias/videos/e9f7fa77-8baf-42ac-aefb-ba1ece2838ee.mp4-transcoded/video_360p.mp4 ]]>
+              </MediaFile>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>
