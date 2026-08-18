@@ -119,12 +119,16 @@ class VPAIDCreative {
   // VPAID Public API Methods (Mostly unchanged)
   //===========================================================
 
-  startAd() {
+startAd() {
     console.log('VPAID: Starting Ad');
     this.videoTag
       .play()
       .then(() => {
         this.triggerEvent_('AdStarted');
+        // VITAL : Dit au lecteur de tirer le pixel <Impression> du VAST
+        this.triggerEvent_('AdImpression');
+        // VITAL : Dit au lecteur que la vidéo linéaire a commencé (souvent requis avec AdImpression)
+        this.triggerEvent_('AdVideoStart');
       })
       .catch(e => {
         this.triggerEvent_('AdError', { message: 'Video failed to start.' });
