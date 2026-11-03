@@ -211,8 +211,8 @@ class VPAIDCreative {
         button.setAttribute('aria-label', 'Close the ad')
         button.style.position = 'absolute'
         button.style.top = '50%'
-        button.style.left = '50%'
-        button.style.transform = 'translate(-50%, -50%)'
+        button.style.left = '8px'
+        button.style.transform = 'translateY(-50%)'
         button.style.zIndex = '2'
         button.style.width = '28px'
         button.style.height = '28px'
