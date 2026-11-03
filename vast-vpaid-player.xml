@@ -32,7 +32,7 @@
             </VideoClicks>
             <MediaFiles>
               <MediaFile delivery="progressive" type="application/javascript" width="640" height="360" apiFramework="VPAID">
-                <![CDATA[ https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@3f5d020/vpaid-player.js ]]>
+                <![CDATA[ https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@c832396/vpaid-player.js ]]>
               </MediaFile>
             </MediaFiles>
             <AdParameters>
