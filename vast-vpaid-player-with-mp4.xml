@@ -1,0 +1,55 @@
+<VAST version="3.0">
+  <Ad>
+    <InLine>
+      <AdSystem/>
+      <AdTitle>
+        <![CDATA[ Ogury ]]>
+      </AdTitle>
+      <Description>
+        <![CDATA[ Ogury ]]>
+      </Description>
+      <Impression>
+        <![CDATA[ https://localhost/impression_vpaid ]]>
+      </Impression>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <Duration>00:00:10</Duration>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[ https://localhost/start_vpaid ]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[ https://localhost/firstQuartile_vpaid ]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[ https://localhost/midpoint_vpaid ]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[ https://localhost/thirdQuartile_vpaid ]]></Tracking>
+              <Tracking event="complete"><![CDATA[ https://localhost/complete_vpaid ]]></Tracking>
+            </TrackingEvents>
+            <VideoClicks>
+              <ClickThrough>
+                <![CDATA[ https://www.google.com ]]>
+              </ClickThrough>
+              <ClickTracking>
+                <![CDATA[ https://localhost/clicktracking_vpaid ]]>
+              </ClickTracking>
+            </VideoClicks>
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="application/javascript" width="640" height="360" apiFramework="VPAID">
+                <![CDATA[ https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@main/vpaid-player.js ]]>
+              </MediaFile>
+              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360">
+                <![CDATA[ https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@main/color-cycle.mp4 ]]>
+              </MediaFile>
+            </MediaFiles>
+            <AdParameters>
+              <![CDATA[
+                {
+                  "videoUrl": "https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@main/color-cycle.mp4",
+                  "clickThroughUrl": "https://www.google.com",
+                  "skippableAfter": 5
+                }
+              ]]>
+            </AdParameters>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>
