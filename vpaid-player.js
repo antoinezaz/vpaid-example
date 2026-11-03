@@ -3,6 +3,7 @@ class VPAIDCreative {
         this.slot_ = null
         this.videoTag = null
         this.button_ = null
+        this.closeButton_ = null
         this.parameters_ = {}
         this.listeners_ = {}
         this.width_ = 0
@@ -62,6 +63,7 @@ class VPAIDCreative {
         this.videoTag.style.objectFit = 'cover'
         this.slot_.appendChild(this.videoTag)
         this.slot_.appendChild(this.websiteButton_())
+        this.slot_.appendChild(this.closeButton_())
         this.bindVideo_()
 
         this.videoTag.addEventListener('loadedmetadata', () => this.markLoaded_())
@@ -89,6 +91,8 @@ class VPAIDCreative {
         }
         if (this.button_ && this.button_.parentNode) this.button_.parentNode.removeChild(this.button_)
         this.button_ = null
+        if (this.closeButton_ && this.closeButton_.parentNode) this.closeButton_.parentNode.removeChild(this.closeButton_)
+        this.closeButton_ = null
         this.trigger_('AdStopped')
     }
 
@@ -198,6 +202,39 @@ class VPAIDCreative {
         })
         this.button_ = button
         return button
+    }
+
+    closeButton_() {
+        const button = document.createElement('button')
+        button.type = 'button'
+        button.textContent = '\u00d7'
+        button.setAttribute('aria-label', 'Close the ad')
+        button.style.position = 'absolute'
+        button.style.top = '50%'
+        button.style.left = '50%'
+        button.style.transform = 'translate(-50%, -50%)'
+        button.style.zIndex = '2'
+        button.style.width = '28px'
+        button.style.height = '28px'
+        button.style.padding = '0'
+        button.style.border = '0'
+        button.style.borderRadius = '4px'
+        button.style.background = '#111111'
+        button.style.color = '#ffffff'
+        button.style.font = '600 18px/1 sans-serif'
+        button.style.cursor = 'pointer'
+        button.addEventListener('click', (event) => {
+            event.preventDefault()
+            event.stopPropagation()
+            this.close_()
+        })
+        this.closeButton_ = button
+        return button
+    }
+
+    close_() {
+        this.trigger_('AdUserClose')
+        this.stopAd()
     }
 
     openWebsite_() {
