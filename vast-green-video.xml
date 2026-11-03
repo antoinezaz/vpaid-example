@@ -29,7 +29,7 @@
             </VideoClicks>
             <MediaFiles>
               <MediaFile delivery="progressive" type="video/mp4" width="640" height="360">
-                <![CDATA[ https://medias.devc.cloud.ogury.io/medias/videos/e9f7fa77-8baf-42ac-aefb-ba1ece2838ee.mp4-transcoded/video_360p.mp4 ]]>
+                <![CDATA[ https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@main/color-cycle.mp4 ]]>
               </MediaFile>
             </MediaFiles>
           </Linear>
