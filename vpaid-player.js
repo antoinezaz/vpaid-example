@@ -260,6 +260,9 @@ class VPAIDCreative {
     }
 
     trigger_(eventName, data) {
+        const at = Math.round(performance.now())
+        if (data === undefined) console.log('[vpaid] ' + at + 'ms ' + eventName)
+        else console.log('[vpaid] ' + at + 'ms ' + eventName, data)
         const list = this.listeners_[eventName] || []
         list.forEach((listener) => listener.callback.call(listener.scope || null, data))
     }
