@@ -63,7 +63,7 @@ class VPAIDCreative {
         this.videoTag.style.objectFit = 'cover'
         this.slot_.appendChild(this.videoTag)
         this.slot_.appendChild(this.websiteButton_())
-        this.slot_.appendChild(this.closeButton_())
+        this.slot_.appendChild(this.createCloseButton_())
         this.bindVideo_()
 
         this.videoTag.addEventListener('loadedmetadata', () => this.markLoaded_())
@@ -204,7 +204,7 @@ class VPAIDCreative {
         return button
     }
 
-    closeButton_() {
+    createCloseButton_() {
         const button = document.createElement('button')
         button.type = 'button'
         button.textContent = '\u00d7'
