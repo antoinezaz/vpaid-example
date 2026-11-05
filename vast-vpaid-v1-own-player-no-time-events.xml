@@ -1,0 +1,55 @@
+<VAST version="3.0">
+  <Ad>
+    <InLine>
+      <AdSystem/>
+      <AdTitle>
+        <![CDATA[ VPAID 1.0, own player, never fires AdRemainingTimeChange ]]>
+      </AdTitle>
+      <Description>
+        <![CDATA[ ADV-23606 playhead matrix: v1-own-player-no-time-events ]]>
+      </Description>
+      <Impression>
+        <![CDATA[ https://localhost/v1-own-player-no-time-events/impression ]]>
+      </Impression>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <Duration>00:00:10</Duration>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[ https://localhost/v1-own-player-no-time-events/start ]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[ https://localhost/v1-own-player-no-time-events/firstQuartile ]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[ https://localhost/v1-own-player-no-time-events/midpoint ]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[ https://localhost/v1-own-player-no-time-events/thirdQuartile ]]></Tracking>
+              <Tracking event="complete"><![CDATA[ https://localhost/v1-own-player-no-time-events/complete ]]></Tracking>
+            </TrackingEvents>
+            <VideoClicks>
+              <ClickThrough>
+                <![CDATA[ https://www.google.com ]]>
+              </ClickThrough>
+              <ClickTracking>
+                <![CDATA[ https://localhost/v1-own-player-no-time-events/clicktracking ]]>
+              </ClickTracking>
+            </VideoClicks>
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="application/javascript" width="640" height="360" apiFramework="VPAID">
+                <![CDATA[ https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@main/vpaid-matrix.js?vpaidVersion=1 ]]>
+              </MediaFile>
+            </MediaFiles>
+            <AdParameters>
+              <![CDATA[
+                {
+                  "scenario": "v1-own-player-no-time-events",
+                  "videoUrl": "https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@main/color-cycle.mp4",
+                  "clickThroughUrl": "https://www.google.com",
+                  "skippableAfter": 5,
+                  "timeApi": "methods",
+                  "emitRemainingTimeChange": false
+                }
+              ]]>
+            </AdParameters>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>

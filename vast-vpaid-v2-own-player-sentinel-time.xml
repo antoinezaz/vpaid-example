@@ -1,0 +1,55 @@
+<VAST version="3.0">
+  <Ad>
+    <InLine>
+      <AdSystem/>
+      <AdTitle>
+        <![CDATA[ VPAID 2.0, own player, adRemainingTime stuck on the -1 and -2 sentinels ]]>
+      </AdTitle>
+      <Description>
+        <![CDATA[ ADV-23606 playhead matrix: v2-own-player-sentinel-time ]]>
+      </Description>
+      <Impression>
+        <![CDATA[ https://localhost/v2-own-player-sentinel-time/impression ]]>
+      </Impression>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <Duration>00:00:10</Duration>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[ https://localhost/v2-own-player-sentinel-time/start ]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[ https://localhost/v2-own-player-sentinel-time/firstQuartile ]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[ https://localhost/v2-own-player-sentinel-time/midpoint ]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[ https://localhost/v2-own-player-sentinel-time/thirdQuartile ]]></Tracking>
+              <Tracking event="complete"><![CDATA[ https://localhost/v2-own-player-sentinel-time/complete ]]></Tracking>
+            </TrackingEvents>
+            <VideoClicks>
+              <ClickThrough>
+                <![CDATA[ https://www.google.com ]]>
+              </ClickThrough>
+              <ClickTracking>
+                <![CDATA[ https://localhost/v2-own-player-sentinel-time/clicktracking ]]>
+              </ClickTracking>
+            </VideoClicks>
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="application/javascript" width="640" height="360" apiFramework="VPAID">
+                <![CDATA[ https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@main/vpaid-matrix.js?vpaidVersion=2 ]]>
+              </MediaFile>
+            </MediaFiles>
+            <AdParameters>
+              <![CDATA[
+                {
+                  "scenario": "v2-own-player-sentinel-time",
+                  "videoUrl": "https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@main/color-cycle.mp4",
+                  "clickThroughUrl": "https://www.google.com",
+                  "skippableAfter": 5,
+                  "timeApi": "properties",
+                  "remainingTimeMode": "sentinel"
+                }
+              ]]>
+            </AdParameters>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>
