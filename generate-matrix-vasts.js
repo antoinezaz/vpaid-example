@@ -84,6 +84,13 @@ const scenarios = [
     params: { timeApi: 'properties', remainingTimeMode: 'garbage' }
   },
   {
+    id: 'v2-swapped-slot',
+    title:
+      'VPAID 2.0, own player, and it detaches our videoSlot the way video.js does on iOS',
+    version: 2,
+    params: { timeApi: 'properties', detachHostVideoSlot: true }
+  },
+  {
     id: 'v1-own-player-silent',
     title:
       'VPAID 1.0, own player, no time API, no time events, no quartiles, never fires AdVideoComplete',

@@ -16,6 +16,8 @@
  *   clickThroughUrl       string
  *   skippableAfter        number  seconds, 0 disables
  *   useHostVideoSlot      bool    adopt environmentVars.videoSlot instead of building our own
+ *   detachHostVideoSlot   bool    own player only: also remove the host's videoSlot from the DOM,
+ *                                 the way video.js does on iOS
  *   timeApi               enum    'properties' | 'methods' | 'both' | 'none'
  *   remainingTimeMode     enum    'accurate' | 'frozen' | 'sentinel' | 'garbage'
  *   emitRemainingTimeChange  bool
@@ -182,6 +184,14 @@
       this.videoTag_.style.display = 'block';
       this.videoTag_.style.objectFit = 'cover';
       this.slot_.appendChild(this.videoTag_);
+
+      // video.js on iOS refuses to move a media element in the DOM, so it clones the host's
+      // videoSlot, inserts the clone and drops the original. The host is then left holding a
+      // detached element whose currentTime never moves, which is a different failure from simply
+      // declining the slot and worth exercising separately.
+      if (this.params_.detachHostVideoSlot && hostSlot && hostSlot.parentNode) {
+        hostSlot.parentNode.removeChild(hostSlot);
+      }
     }
   };
 

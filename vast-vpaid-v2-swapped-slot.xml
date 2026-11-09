@@ -1,0 +1,55 @@
+<VAST version="3.0">
+  <Ad>
+    <InLine>
+      <AdSystem/>
+      <AdTitle>
+        <![CDATA[ VPAID 2.0, own player, and it detaches our videoSlot the way video.js does on iOS ]]>
+      </AdTitle>
+      <Description>
+        <![CDATA[ ADV-23606 playhead matrix: v2-swapped-slot ]]>
+      </Description>
+      <Impression>
+        <![CDATA[ https://localhost/v2-swapped-slot/impression ]]>
+      </Impression>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <Duration>00:00:10</Duration>
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[ https://localhost/v2-swapped-slot/start ]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[ https://localhost/v2-swapped-slot/firstQuartile ]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[ https://localhost/v2-swapped-slot/midpoint ]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[ https://localhost/v2-swapped-slot/thirdQuartile ]]></Tracking>
+              <Tracking event="complete"><![CDATA[ https://localhost/v2-swapped-slot/complete ]]></Tracking>
+            </TrackingEvents>
+            <VideoClicks>
+              <ClickThrough>
+                <![CDATA[ https://www.google.com ]]>
+              </ClickThrough>
+              <ClickTracking>
+                <![CDATA[ https://localhost/v2-swapped-slot/clicktracking ]]>
+              </ClickTracking>
+            </VideoClicks>
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="application/javascript" width="640" height="360" apiFramework="VPAID">
+                <![CDATA[ https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@f6b9e48/vpaid-matrix.js?vpaidVersion=2 ]]>
+              </MediaFile>
+            </MediaFiles>
+            <AdParameters>
+              <![CDATA[
+                {
+                  "scenario": "v2-swapped-slot",
+                  "videoUrl": "https://cdn.jsdelivr.net/gh/antoinezaz/vpaid-example@main/color-cycle.mp4",
+                  "clickThroughUrl": "https://www.google.com",
+                  "skippableAfter": 5,
+                  "timeApi": "properties",
+                  "detachHostVideoSlot": true
+                }
+              ]]>
+            </AdParameters>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>

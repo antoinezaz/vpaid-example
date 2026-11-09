@@ -49,6 +49,7 @@ inconsistent, and some ship neither.
 | `vast-vpaid-v2-own-player-frozen-time.xml` | 2.0 | own | properties | constant, never moves |
 | `vast-vpaid-v2-own-player-sentinel-time.xml` | 2.0 | own | properties | `-1` then `-2` |
 | `vast-vpaid-v2-own-player-garbage-time.xml` | 2.0 | own | properties | `undefined`, `NaN`, strings, `Infinity` |
+| `vast-vpaid-v2-swapped-slot.xml` | 2.0 | own, and detaches our `videoSlot` | properties | accurate |
 | `vast-vpaid-v1-own-player-silent.xml` | 1.0 | own | none | no time events, no quartiles, no `AdVideoComplete` |
 
 ### What to expect on a 10-second creative
@@ -75,6 +76,13 @@ counting down, and a pause-aware wall clock otherwise.
   `v2-own-player-no-time-api`.
 - **`v2-own-player-sentinel-time`** and **`v2-own-player-garbage-time`** must also land on the wall
   clock. Every sample is validated, so no sentinel or non-number ever reaches the playhead.
+- **`v2-swapped-slot`** is the one scenario where the host's `<video>` is removed from the page
+  rather than merely left empty. It reproduces video.js on iOS, which refuses to move a media
+  element and so clones our slot, inserts the clone and drops the original. `video-slot-adoption.ts`
+  is supposed to notice within 50 ms and forward `currentTime`, `volume`, `muted` and the media
+  events from the clone onto the element we kept. Two things to check: the ad plays, tracks and can
+  be closed normally, and the `playheadSource` dimension reports `vpaid-swapped-slot` rather than
+  `host-video` — the proxied `currentTime` makes it look like our player otherwise.
 - **`v1-own-player-silent`** is the worst case. Nothing but the wall clock, and no
   `AdVideoComplete` to flush the remaining trackers at the end — so `complete` has to come from
   progress crossing the VAST billed duration, not from the creative.
